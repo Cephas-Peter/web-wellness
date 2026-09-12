@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Timeline from '../components/Timeline.astro';
+
+const timelineEntries = [
+  {
+    year: '1996',
+    title: 'It All Starts Here',
+    description:
+      "The journey into my passion for helping people started here. Registered at the University of the Witwatersrand for a Social Work degree. In 2001, I walked out of Wits with a BA Social Work degree, ready to face the world and to start my passion for helping people.",
+  },
+  {
+    year: '2001',
+    title: 'The Journey Begins',
+    description:
+      "It all started at the Johannesburg Child Welfare Society, April 2001, as a Statutory Social Worker working with the court system. The passion for Occupational Social Work began, leading to a Certificate in Employee Assistance Programmes (EAP) with the University of Pretoria in June 2008.",
+  },
+  {
+    year: '2013–2014',
+    title: 'Bitten By The Bug',
+    description:
+      "Bitten by the corporate bug, I started working for Careways in 2011 as a Project Relations Manager and when the opportunity arose, I ended up being a guest presenter at University of Pretoria for the Employee Assistance Programmes (EAP) Short Course. Presented on the topic: Marketing of Employee Assistance Programmes and the Therapeutic Components of EAP.",
+  },
+  {
+    year: '2023',
+    title: 'Wellness With Lindz Is Born',
+    description:
+      "The spark for helping people was reignited and in April 2023, Wellness with Lindz was born! A defining moment in my journey. I found meaning and purpose in life. So, “If you feel like there’s something out there that you’re supposed to be doing, if you have a passion for it, then stop wishing and just do it.” Wanda Sykes. And in the words of Maya Angelou: “My mission in life is not merely to survive, but to thrive; and to do so with some passion, some compassion, some humor, and some style.”",
+  },
+];
+---
+
+<BaseLayout title="About" description="The philosophy behind Wellness with Lindz.">
+  <section class="section">
+    <div class="container about__grid">
+      <div>
+        <p class="eyebrow">About the practice</p>
+        <h1>A practice built around one conversation at a time.</h1>
+        <p>
+          Wellness with Lindz is a social work private practice and a 100% female black owned company that provides a wide range of services to individuals, groups, families and companies. It was founded in April 2023, by Lindiwe Shayi, a qualified and registered Social Worker with BA. (Hons) Wits University, 2001. Lindiwe is also an Employee Assistance Programme Practitioner, as well as a qualified Trauma Management counsellor.
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          <em></em>
+        </p>
+        <h2 style="margin-top: 3rem;">The journey so far</h2>
+        <Timeline entries={timelineEntries} />
+      </div>
+      <aside class="about__facts">
+        <h2 class="about__facts-title">In brief</h2>
+        <dl>
+          <div><dt>Location</dt><dd>Johannesburg, with online sessions available</dd></div>
+          <div><dt>Session length</dt><dd>50 minutes</dd></div>
+          <div><dt>Availability</dt><dd>Weekday mornings and afternoons</dd></div>
+        </dl>
+        <a href="/team" class="btn btn-ghost">Meet the team</a>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about__grid {
+    display: grid;
+    gap: 3rem;
+  }
+  @media (min-width: 860px) {
+    .about__grid { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+  }
+  .about__facts {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    align-self: start;
+  }
+  .about__facts-title { font-size: 1.05rem; }
+  .about__facts dl { margin: 0 0 1.5rem; }
+  .about__facts div { padding: 0.7rem 0; border-top: 1px solid var(--line); }
+  .about__facts div:first-child { border-top: none; }
+  .about__facts dt { font-size: 0.82rem; color: var(--ink-soft); margin-bottom: 0.2em; }
+  .about__facts dd { margin: 0; font-weight: 500; }
+</style>
